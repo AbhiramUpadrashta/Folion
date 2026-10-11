@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Folion — edit any PDF or photo</title>
+<meta name="description" content="Folion is a free, private PDF and image editor that runs in your browser. Edit text, sign, annotate, organize pages and export to PDF, JPG, PNG or WebP.">
+<meta name="theme-color" content="#4f6bed">
+<link rel="icon" href="../img/folion.svg">
+<link rel="apple-touch-icon" href="../img/folion-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&family=Dancing+Script:wght@600&family=Merriweather:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css?v=bf019a2">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f8cff"/><stop offset="1" stop-color="#7c5cf0"/></linearGradient>
+  </defs>
+  <symbol id="i-select" viewBox="0 0 24 24"><path d="M5 3l14 8-6 1.6L10 19z"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 7V5h11v2M9.5 5v14M7 19h5"/><path d="M14 19l6-6 1.5 1.5-6 6H14z"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 6V4h14v2M12 4v16M9 20h6"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></symbol>
+  <symbol id="i-hl" viewBox="0 0 24 24"><path d="M9 14l-3 3v3h3l3-3"/><path d="M9 14l6-10 5 5-10 6"/><path d="M3 21h8"/></symbol>
+  <symbol id="i-shape" viewBox="0 0 24 24"><rect x="3" y="11" width="9" height="9" rx="1.5"/><circle cx="16" cy="8" r="5"/></symbol>
+  <symbol id="i-rect" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/></symbol>
+  <symbol id="i-ellipse" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="7"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path d="M5 19L19 5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19L19 5M10 5h9v9"/></symbol>
+  <symbol id="i-white" viewBox="0 0 24 24"><path d="M7 21h12M5.5 14.5l7-11 7 4.5-7 11H8z"/><path d="M9 9l6.5 4"/></symbol>
+  <symbol id="i-redact" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="1.5" fill="currentColor"/><path d="M3 4h10M3 20h14"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24"><path d="M3 17c3-6 5-9 6-8s-2 8 0 8 3-5 4-5 0 4 2 4 3-2 6-2"/><path d="M3 21h18"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M4 4h16v12l-5 5H4z"/><path d="M15 21v-5h5M8 9h8M8 13h5"/></symbol>
+  <symbol id="i-stamp" viewBox="0 0 24 24"><path d="M9 4h6l-1 7h3a2 2 0 0 1 2 2v3H5v-3a2 2 0 0 1 2-2h3z"/><path d="M5 20h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></symbol>
+  <symbol id="i-redo" viewBox="0 0 24 24"><path d="M15 14l5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h3"/></symbol>
+  <symbol id="i-zin" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M11 8v6M8 11h6"/></symbol>
+  <symbol id="i-zout" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M8 11h6"/></symbol>
+  <symbol id="i-pages" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="9" rx="1.5"/><rect x="3" y="15" width="7" height="6" rx="1.5"/><rect x="14" y="15" width="7" height="6" rx="1.5"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.5M8.2 13.2l7.6 4.5"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+  <symbol id="i-rot" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 1-2.3-5.7L20 8"/><path d="M20 3v5h-5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-open" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M7 12h10"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3M7 14h10v7H7z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 9.5V20h5v-6h4v6h5V9.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-front" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="currentColor" opacity=".25"/><rect x="4" y="4" width="12" height="12" rx="2"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><rect x="4" y="4" width="12" height="12" rx="2" fill="currentColor" opacity=".25"/><rect x="8" y="8" width="12" height="12" rx="2"/></symbol>
+  <symbol id="i-wand" viewBox="0 0 24 24"><path d="M4 20L16 8M14 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1zM19 11l.7 1.3 1.3.7-1.3.7L19 15l-.7-1.3L17 13l1.3-.7z"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h4M7 14h10M14 9h3"/></symbol>
+  <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-hash" viewBox="0 0 24 24"><path d="M9 4L7 20M17 4l-2 16M4 9h16M3 15h16"/></symbol>
+  <symbol id="i-crop" viewBox="0 0 24 24"><path d="M6 2v16h16M2 6h16v16"/></symbol>
+  <symbol id="i-compress" viewBox="0 0 24 24"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M6 3v6a6 6 0 0 0 6 6 6 6 0 0 1 6 6M18 3v6a6 6 0 0 1-3.5 5.5"/></symbol>
+  <symbol id="i-merge" viewBox="0 0 24 24"><path d="M6 3v4a6 6 0 0 0 6 6 6 6 0 0 1 6 6v2M18 3v4a6 6 0 0 1-3 5.2M12 13v8"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor"/></symbol>
+  <symbol id="i-flat" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-bold" viewBox="0 0 24 24"><path d="M7 4h6a4 4 0 0 1 0 8H7zM7 12h7a4 4 0 0 1 0 8H7z"/></symbol>
+  <symbol id="i-italic" viewBox="0 0 24 24"><path d="M10 4h8M6 20h8M14 4l-4 16"/></symbol>
+  <symbol id="i-under" viewBox="0 0 24 24"><path d="M7 4v7a5 5 0 0 0 10 0V4M5 21h14"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h16M4 18h10"/></symbol>
+  <symbol id="i-center" viewBox="0 0 24 24"><path d="M4 6h16M7 10h10M4 14h16M7 18h10"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 6h16M10 10h10M4 14h16M10 18h10"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></symbol>
+</svg>
+
+<!-- floating bubbles behind everything -->
+<div class="bub-bg" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ============ HOME ============ -->
+<section id="home" class="home">
+  <header class="home-top">
+    <a class="brand" href="../"><img src="../img/folion.svg" alt=""><b>Folion</b></a>
+    <div class="grow"></div>
+    <button class="ibtn" id="themeBtn2" title="Light / dark"><svg><use href="#i-moon"/></svg></button>
+  </header>
+  <div class="home-main">
+    <h1>Edit <span class="grad">anything</span>.<br>Any PDF. Any photo.</h1>
+    <p class="lead">Change the words, sign, mark up and rearrange pages — right in your browser. Your files never leave your device.</p>
+    <label class="drop" id="drop">
+      <input type="file" id="fileIn" accept="application/pdf,image/*,.pdf" multiple hidden>
+      <div class="drop-bubble"><svg><use href="#i-file"/></svg></div>
+      <strong>Drop a PDF or image here</strong>
+      <span>or tap to choose · PDF, JPG, PNG, WebP, GIF, BMP</span>
+    </label>
+    <div class="home-acts">
+      <label class="pill"><input type="file" id="camIn" accept="image/*" capture="environment" hidden><svg><use href="#i-cam"/></svg>Take a photo</label>
+      <button class="pill" id="blankBtn"><svg><use href="#i-plus"/></svg>Blank page</button>
+      <button class="pill hidden" id="resumeBtn"><svg><use href="#i-undo"/></svg><span>Continue last file</span></button>
+    </div>
+    <div class="feat-row">
+      <span><svg><use href="#i-edit"/></svg>Edit existing text</span>
+      <span><svg><use href="#i-scan"/></svg>Photo → editable text</span>
+      <span><svg><use href="#i-sign"/></svg>Sign & fill</span>
+      <span><svg><use href="#i-pages"/></svg>Merge, split, rotate</span>
+      <span><svg><use href="#i-down"/></svg>PDF · JPG · PNG · WebP</span>
+    </div>
+  </div>
+  <footer class="home-foot">Powered by <a href="../../">Bubbles</a> · 100% on-device · free</footer>
+</section>
+
+<!-- ============ EDITOR ============ -->
+<section id="editor" class="editor hidden">
+  <header class="topbar glass">
+    <button class="ibtn" id="homeBtn" title="Home"><img src="../img/folion.svg" alt="Folion" class="tlogo"></button>
+    <input id="docName" class="docname" value="Untitled" spellcheck="false" aria-label="File name">
+    <div class="grow"></div>
+    <div class="tgroup">
+      <button class="ibtn" id="undoBtn" title="Undo (Ctrl+Z)"><svg><use href="#i-undo"/></svg></button>
+      <button class="ibtn" id="redoBtn" title="Redo (Ctrl+Shift+Z)"><svg><use href="#i-redo"/></svg></button>
+    </div>
+    <div class="tgroup zoomg">
+      <button class="ibtn" id="zoutBtn" title="Zoom out"><svg><use href="#i-zout"/></svg></button>
+      <button class="zlabel" id="zLabel" title="Fit width">100%</button>
+      <button class="ibtn" id="zinBtn" title="Zoom in"><svg><use href="#i-zin"/></svg></button>
+    </div>
+    <button class="ibtn" id="pagesBtn" title="Pages"><svg><use href="#i-pages"/></svg></button>
+    <button class="ibtn" id="toolsBtn" title="More tools"><svg><use href="#i-wand"/></svg></button>
+    <button class="ibtn" id="themeBtn" title="Light / dark"><svg><use href="#i-moon"/></svg></button>
+    <button class="btn-primary" id="exportBtn"><svg><use href="#i-down"/></svg><span>Export</span></button>
+  </header>
+
+  <nav class="rail glass" id="rail" aria-label="Tools">
+    <button data-tool="select" class="on" title="Select & move (V)"><svg><use href="#i-select"/></svg><span>Select</span></button>
+    <button data-tool="edit" title="Edit existing text (E)"><svg><use href="#i-edit"/></svg><span>Edit text</span></button>
+    <button data-tool="text" title="Add text (T)"><svg><use href="#i-text"/></svg><span>Text</span></button>
+    <button data-tool="pen" title="Draw (P)"><svg><use href="#i-pen"/></svg><span>Draw</span></button>
+    <button data-tool="hl" title="Highlight (H)"><svg><use href="#i-hl"/></svg><span>Highlight</span></button>
+    <button data-tool="shape" title="Shapes (S)"><svg><use href="#i-shape"/></svg><span>Shapes</span></button>
+    <button data-tool="white" title="Whiteout / erase (W)"><svg><use href="#i-white"/></svg><span>Erase</span></button>
+    <button data-tool="redact" title="Redact (R)"><svg><use href="#i-redact"/></svg><span>Redact</span></button>
+    <button data-tool="image" title="Add image (I)"><svg><use href="#i-image"/></svg><span>Image</span></button>
+    <button data-tool="sign" title="Signature (G)"><svg><use href="#i-sign"/></svg><span>Sign</span></button>
+    <button data-tool="note" title="Comment (N)"><svg><use href="#i-note"/></svg><span>Note</span></button>
+    <button data-tool="stamp" title="Stamps & marks"><svg><use href="#i-stamp"/></svg><span>Stamp</span></button>
+  </nav>
+
+  <div class="ctx glass" id="ctx"></div>
+
+  <aside class="side glass" id="side">
+    <div class="side-head"><b>Pages</b><span id="pageCount" class="muted"></span><div class="grow"></div>
+      <button class="ibtn sm" id="addPageBtn" title="Insert blank page"><svg><use href="#i-plus"/></svg></button>
+      <label class="ibtn sm" title="Add pages from file"><input type="file" id="mergeIn" accept="application/pdf,image/*" multiple hidden><svg><use href="#i-merge"/></svg></label>
+      <button class="ibtn sm" id="sideClose" title="Close"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
+    <div class="side-foot muted">Drag to reorder · tap ✓ to select</div>
+  </aside>
+
+  <main class="viewer" id="viewer"><div class="pages" id="pages"></div></main>
+  <div class="pagepill glass" id="pagePill">1 / 1</div>
+</section>
+
+<!-- ============ DIALOGS ============ -->
+<div class="scrim hidden" id="scrim"></div>
+<div class="sheet hidden" id="sheet" role="dialog" aria-modal="true"><div class="sheet-in" id="sheetIn"></div></div>
+<div class="toast" id="toast"></div>
+<div class="busy hidden" id="busy"><div class="busy-in"><div class="spin"><i></i><i></i><i></i></div><b id="busyText">Working…</b><div class="bar"><i id="busyBar"></i></div></div></div>
+
+<input type="file" id="imgIn" accept="image/*" hidden>
+
+<script src="vendor/pdf.min.js"></script>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/fabric.min.js"></script>
+<script src="folion.js?v=bf019a2"></script>
+</body>
+</html>

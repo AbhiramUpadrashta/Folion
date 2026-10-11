@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Bubbles Aro">
+  <defs>
+    <radialGradient id="a1" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#d6e0ff"/><stop offset=".45" stop-color="#7c9cff"/><stop offset="1" stop-color="#4659d8"/></radialGradient>
+    <radialGradient id="a2" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#ffdbe7"/><stop offset=".45" stop-color="#ff8fb1"/><stop offset="1" stop-color="#df4f86"/></radialGradient>
+    <radialGradient id="a3" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#d8fff3"/><stop offset=".45" stop-color="#5fd9b6"/><stop offset="1" stop-color="#21a383"/></radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="#ffffff"/>
+  <circle cx="216" cy="288" r="136" fill="url(#a1)"/>
+  <path d="M136 248a88 88 0 0 1 72-80" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" opacity=".8"/>
+  <circle cx="352" cy="168" r="80" fill="url(#a2)"/>
+  <path d="M308 148a48 48 0 0 1 36-36" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round" opacity=".8"/>
+  <circle cx="376" cy="368" r="48" fill="url(#a3)"/>
+  <path d="M352 356a24 24 0 0 1 16-20" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+</svg>

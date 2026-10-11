@@ -1,0 +1,17 @@
+{
+  "name": "Folion — PDF & photo editor",
+  "short_name": "Folion",
+  "description": "Edit any PDF or photo in your browser. Powered by Bubbles.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f5fc",
+  "theme_color": "#4f6bed",
+  "icons": [
+    { "src": "../img/folion-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "../img/folion-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "../img/folion.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "file_handlers": [{ "action": "./", "accept": { "application/pdf": [".pdf"], "image/*": [".jpg", ".jpeg", ".png", ".webp"] } }],
+  "share_target": { "action": "./share", "method": "POST", "enctype": "multipart/form-data", "params": { "files": [{ "name": "file", "accept": ["application/pdf", "image/*"] }] } }
+}
