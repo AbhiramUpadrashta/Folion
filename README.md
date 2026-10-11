@@ -9,6 +9,6 @@ Change existing text, make photos and scans editable, sign, highlight, add shape
 merge / split / rotate pages, redact, and export to PDF, JPG, PNG or WebP. Everything runs on your device.
 
 This repository only publishes the finished app and its website. The source code is private.
-Third-party licenses: see THIRD_PARTY_NOTICES.md.
+License: MIT (see LICENSE). Third-party licenses: see THIRD_PARTY_NOTICES.txt.
 
 © 2026 Bubbles Aro
