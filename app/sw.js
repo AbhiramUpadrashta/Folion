@@ -1,5 +1,5 @@
 /* Folion service worker: works offline after the first visit, and receives files shared to the installed app. */
-const V = 'folion-12190e3';
+const V = 'folion-6b31d2b';
 const CORE = ['./', 'index.html', 'app.css', 'folion.js', 'vendor/pdf.min.js', 'vendor/pdf.worker.min.js', 'vendor/pdf-lib.min.js', 'vendor/fabric.min.js', '../img/folion.svg', 'manifest.webmanifest'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k.startsWith('folion-v') && k !== V).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
