@@ -2,8 +2,8 @@
 
 Edit any PDF or photo, free in your browser. By **Bubbles Aro** — powered by Bubbles.
 
-**Open it:** https://abhiramupadrashta.github.io/Folion/app/
-**Website:** https://abhiramupadrashta.github.io/Folion/
+**Open it:** https://bubbles.foo.ng/Folion/app/
+**Website:** https://bubbles.foo.ng/Folion/
 
 Change existing text, make photos and scans editable, sign, highlight, add shapes and notes, fill forms,
 merge / split / rotate pages, redact, and export to PDF, JPG, PNG or WebP. Everything runs on your device.
